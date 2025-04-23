@@ -40,5 +40,3 @@ class DndCharacter
     puts @hitpoints
   end
 end
-
-character = DndCharacter.new
