@@ -8,6 +8,7 @@
   * Syntax differences
   * Method types
 * Syntax
+  * Loop structures
   * Regex
     * General formatting
     * Character classes
@@ -47,6 +48,7 @@
     * Returns 0 if the first operand equals the second
     * Returns -1 if the first operand is less than the second
   * `===`   - Used to test equality with a when clause of a case statement
+    * Returns true if the right hand operand belongs to the collection of the left hand operand
   * `.eql?` - Checks if both the value and type of both arguments are the same
   * `.equal?` - Checks to see if both operands have the same object ID (i.e. if they are clones)
 * Assignment
@@ -91,6 +93,7 @@
   * Denoted by the `self.` prefix.
   * Can be run without having the object instance initialized
 * Instance Methods
+  * Private methods that require the object to be instantiated before calling
 * Boolean methods
   * Methods with a question mark at the end that are designed to return a boolean value.
 
@@ -98,6 +101,18 @@
 
 * Null is `nil`
 * Blocks like fucntions, `if`, `for`, and `while` terminate with `end` statements
+
+### Loop structures
+
+* `for`     - Nothing unusual. Iterates over a given range
+* `while`   - Runs the loop until a given condition is false
+* `until`   - Opposite of a while. Runs the loop until a given condition is true
+* `break`   - Terminates the innermost loop if called within a loop
+* `next`    - Jumps to the next iteration of the innermost loop
+* `redo`    - Restarts the current iteration of the innermost loop
+* `retry`   - Attempts the current iteration of a loop under certain conditions
+  * If called in a rescue block: retries the body of the begin expression
+  * If called in a loop: retries iteration if a conditional is met (defined as `retry if [condition]`)
 
 ### Regex
 
@@ -157,6 +172,8 @@
 
 * Slicing syntax is similar to Python, but uses commas instead of colons
   * Negative indexing is allowed, but **only** for individiual characters or the first part of a slice
+  * Negative indexing can be used for slices, but only in the form of a range
+    * ex `string[5..-2]` would give the slice from the 6th character of the string up until the second to last character.
 * Methods on a string return a new string with the desired qualities
   * Some methods have a version ending in "!" that edit the existing string (i.e.)
     * `string.capitalize` => results in a new object w/ first letter in caps
